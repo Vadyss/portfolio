@@ -264,7 +264,6 @@ export const projects = {
 export const contact = {
   eyebrow: 'Contact',
   title: 'Contact me.',
-  intro: 'Open to new job opportunities in AI engineering, full-stack development and cybersecurity. The fastest way to reach me is by email or phone.',
   personalEmail: 'Email',
   phone: 'Phone',
   github: 'GitHub',

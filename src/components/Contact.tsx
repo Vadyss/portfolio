@@ -78,7 +78,6 @@ export function Contact() {
         <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">
           <span className="text-gradient">{contact.title}</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">{contact.intro}</p>
       </Reveal>
 
       <div className="mx-auto mt-14 grid max-w-5xl gap-5 md:grid-cols-3">
