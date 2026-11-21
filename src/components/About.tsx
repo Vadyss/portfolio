@@ -7,7 +7,7 @@ export function About() {
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <Reveal>
           <p className="eyebrow mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-accent/60" />
+            <span className="h-px w-8 bg-white/25" />
             {about.eyebrow}
           </p>
           <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl sm:leading-[1.1]">
@@ -24,16 +24,18 @@ export function About() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-4 sm:grid-cols-3">
-        {about.stats.map((s, i) => (
-          <Reveal key={s.value} delay={i * 100}>
-            <div className="card h-full p-7">
-              <p className="text-gradient font-display text-5xl font-bold tracking-tight sm:text-6xl">{s.value}</p>
-              <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-muted">{s.label}</p>
+      {/* Quiet fact row: plain figures, no gradient, divided by hairlines. */}
+      <Reveal className="mt-16">
+        <dl className="grid divide-y divide-line border-y border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {about.stats.map((s) => (
+            <div key={s.value} className="py-6 sm:px-8 sm:first:pl-0">
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="font-display text-4xl font-semibold tracking-tight text-ink">{s.value}</dd>
+              <dd className="mt-1.5 text-sm text-muted">{s.label}</dd>
             </div>
-          </Reveal>
-        ))}
-      </div>
+          ))}
+        </dl>
+      </Reveal>
     </Section>
   )
 }

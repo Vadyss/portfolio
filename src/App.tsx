@@ -8,7 +8,6 @@ import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
 import { SectionRail, SocialRail } from './components/Rails'
 import { Stack } from './components/Stack'
-import { Spotlight } from './components/ui'
 
 const SECTION_IDS = sections.map((s) => s.id)
 
@@ -25,7 +24,6 @@ export default function App() {
       </a>
 
       <div aria-hidden className="backdrop-grid pointer-events-none fixed inset-0 z-0" />
-      <Spotlight />
 
       <Header active={active} />
       <SocialRail />

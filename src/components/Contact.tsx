@@ -50,12 +50,12 @@ function ContactCard({
   return (
     <div className="card card-hover flex h-full flex-col p-6 sm:p-7">
       <div className="flex items-center justify-between gap-3">
-        <span className="grid size-11 place-items-center rounded-xl border border-line bg-white/[0.04] text-accent">
+        <span className="grid size-11 place-items-center rounded-xl border border-line bg-white/[0.04] text-ink/80">
           {icon}
         </span>
         {copyValue && <CopyButton value={copyValue} />}
       </div>
-      <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted">{label}</p>
+      <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-muted">{label}</p>
       <p className="mt-1.5 font-display text-lg font-medium tracking-tight text-ink [overflow-wrap:anywhere] sm:text-xl">{value}</p>
       {note && <p className="mt-1 text-sm text-faint">{note}</p>}
       <a
@@ -76,7 +76,7 @@ export function Contact() {
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="eyebrow mb-4">{contact.eyebrow}</p>
         <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">
-          <span className="text-gradient">{contact.title}</span>
+          {contact.title}
         </h2>
       </Reveal>
 

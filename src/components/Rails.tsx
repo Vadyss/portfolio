@@ -40,7 +40,7 @@ export function SectionRail({ active }: { active: string }) {
             className="group flex items-center gap-3 py-1"
           >
             <span
-              className={`font-mono text-[0.65rem] uppercase tracking-widest transition-all duration-300 ${
+              className={`font-mono text-xs uppercase tracking-widest transition-all duration-300 ${
                 on
                   ? 'translate-x-0 text-ink opacity-100'
                   : 'translate-x-2 text-muted opacity-0 group-hover:translate-x-0 group-hover:opacity-100'

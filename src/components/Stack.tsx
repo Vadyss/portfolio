@@ -51,7 +51,7 @@ export function Stack() {
         {stack.groups.map((g, i) => (
           <Reveal key={g.title} delay={i * 80}>
             <div className="card h-full p-6">
-              <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{g.title}</h3>
+              <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-muted">{g.title}</h3>
               <ul className="mt-4 space-y-2 text-sm text-ink/85">
                 {g.items.map((item) => (
                   <li key={item} className="flex items-center gap-2.5">
@@ -68,11 +68,11 @@ export function Stack() {
       {/* Currently learning */}
       <Reveal className="mt-4">
         <div className="card flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8">
-          <span className="grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-white/[0.04] text-accent">
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-white/[0.04] text-ink/80">
             <GraduationCap className="size-6" strokeWidth={1.6} />
           </span>
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{learning.eyebrow}</p>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">{learning.eyebrow}</p>
             <h3 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">{learning.title}</h3>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">{learning.description}</p>
           </div>

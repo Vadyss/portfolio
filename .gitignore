@@ -3,3 +3,6 @@ dist
 .DS_Store
 *.local
 *.tsbuildinfo
+
+# Third-party design skill (no license file upstream, contains Apple HIG text) — kept local only
+.claude/skills/

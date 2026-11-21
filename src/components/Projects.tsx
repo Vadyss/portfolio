@@ -11,7 +11,7 @@ function WindowFrame({ title, children }: { title: string; children: ReactNode }
         <span className="size-2.5 rounded-full bg-white/15" />
         <span className="size-2.5 rounded-full bg-white/15" />
         <span className="size-2.5 rounded-full bg-white/15" />
-        <span className="ml-2 truncate font-mono text-[0.68rem] text-faint">{title}</span>
+        <span className="ml-2 truncate font-mono text-xs text-faint">{title}</span>
       </div>
       {children}
     </div>
@@ -57,7 +57,7 @@ function RedLabVisual() {
         <div className="mt-5! h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
           <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-accent to-accent-2" />
         </div>
-        <p className="flex justify-between text-[0.68rem] text-faint">
+        <p className="flex justify-between text-xs text-faint">
           <span>applying</span>
           <span>80 %</span>
         </p>
@@ -113,19 +113,18 @@ function FeaturedProject({ project, index }: { project: Project; index: number }
           <div className={flip ? 'lg:order-2' : undefined}>{Visual && <Visual />}</div>
 
           <div>
-            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              <span className="text-faint">0{index + 1}</span>
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
               {project.kind}
             </p>
             <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-4xl">{project.name}</h3>
-            {project.meta && <p className="mt-2 font-mono text-[0.7rem] text-faint">{project.meta}</p>}
+            {project.meta && <p className="mt-2 font-mono text-xs text-faint">{project.meta}</p>}
             <p className="mt-4 leading-relaxed text-muted">{project.description}</p>
 
             {project.highlights && (
               <ul className="mt-5 space-y-2.5 text-sm text-ink/85">
                 {project.highlights.map((h) => (
                   <li key={h} className="flex gap-3">
-                    <Check className="mt-0.5 size-4 shrink-0 text-accent" />
+                    <Check className="mt-0.5 size-4 shrink-0 text-muted" />
                     <span>{h}</span>
                   </li>
                 ))}
@@ -158,11 +157,11 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         className="card card-hover group flex h-full flex-col p-6 sm:p-7"
       >
         <div className="flex items-start justify-between gap-4">
-          <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-accent">{project.kind}</p>
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">{project.kind}</p>
           <ArrowUpRight className="size-5 shrink-0 text-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
         </div>
         <h3 className="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">{project.name}</h3>
-        {project.meta && <p className="mt-1.5 font-mono text-[0.68rem] text-faint">{project.meta}</p>}
+        {project.meta && <p className="mt-1.5 font-mono text-xs text-faint">{project.meta}</p>}
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{project.description}</p>
         <div className="mt-6">
           <Tags tags={project.tags} />
@@ -207,11 +206,11 @@ export function Projects() {
             ))}
           </div>
           <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center">
-            <span className="grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-white/[0.04] text-accent">
+            <span className="grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-white/[0.04] text-ink/80">
               <Lock className="size-5" strokeWidth={1.8} />
             </span>
             <div className="max-w-xl">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{projects.private.eyebrow}</p>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">{projects.private.eyebrow}</p>
               <h3 className="mt-1 text-xl font-semibold tracking-tight sm:text-2xl">{projects.private.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">{projects.private.description}</p>
               <a

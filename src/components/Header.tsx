@@ -71,7 +71,7 @@ export function Header({ active }: { active: string }) {
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
               onClick={() => setOpen((o) => !o)}
-              className="grid size-10 place-items-center rounded-xl border border-line bg-white/[0.03] lg:hidden"
+              className="grid size-11 place-items-center rounded-xl border border-line bg-white/[0.03] lg:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -92,15 +92,14 @@ export function Header({ active }: { active: string }) {
         }`}
       >
         <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center gap-2">
-          {sections.map((s, i) => (
+          {sections.map((s) => (
             <a
               key={s.id}
               href={`#${s.id}`}
               onClick={() => setOpen(false)}
               className="flex items-baseline gap-4 py-2 font-display text-3xl font-semibold tracking-tight"
             >
-              <span className="font-mono text-xs text-accent">0{i + 1}</span>
-              <span className={active === s.id ? 'text-gradient' : 'text-ink'}>{s.label}</span>
+              <span className={active === s.id ? 'text-accent' : 'text-ink'}>{s.label}</span>
             </a>
           ))}
         </nav>

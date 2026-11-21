@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react'
 import type { CSSProperties, ReactNode } from 'react'
-import { prefersReducedMotion, useReveal } from '../hooks'
+import { useReveal } from '../hooks'
 
 export function Reveal({
   children,
@@ -68,51 +67,12 @@ export function SectionHeading({
   return (
     <Reveal className="mb-12 max-w-2xl sm:mb-16">
       <p className="eyebrow mb-4 flex items-center gap-3">
-        <span className="h-px w-8 bg-accent/60" />
+        <span className="h-px w-8 bg-white/25" />
         {eyebrow}
       </p>
       <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">{title}</h2>
       {intro && <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">{intro}</p>}
     </Reveal>
-  )
-}
-
-/** Soft accent glow that follows the pointer (desktop, fine pointers only). */
-export function Spotlight() {
-  const ref = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    const el = ref.current
-    if (!el || prefersReducedMotion() || !window.matchMedia('(pointer: fine)').matches) return
-    let raf = 0
-    let x = window.innerWidth / 2
-    let y = window.innerHeight / 3
-    const apply = () => {
-      raf = 0
-      el.style.setProperty('--x', `${x}px`)
-      el.style.setProperty('--y', `${y}px`)
-    }
-    const onMove = (e: PointerEvent) => {
-      x = e.clientX
-      y = e.clientY
-      el.style.opacity = '1'
-      if (!raf) raf = requestAnimationFrame(apply)
-    }
-    window.addEventListener('pointermove', onMove, { passive: true })
-    return () => {
-      window.removeEventListener('pointermove', onMove)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
-  return (
-    <div
-      ref={ref}
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 opacity-0 transition-opacity duration-700"
-      style={{
-        background:
-          'radial-gradient(520px circle at var(--x, 50%) var(--y, 30%), color-mix(in oklab, var(--accent) 8%, transparent), transparent 70%)',
-      }}
-    />
   )
 }
 

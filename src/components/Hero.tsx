@@ -9,7 +9,7 @@ function CodeCard() {
   return (
     <div
       aria-hidden
-      className="card animate-float w-[22rem] shrink-0 overflow-hidden whitespace-nowrap font-mono text-[0.78rem] leading-6 shadow-2xl shadow-black/50"
+      className="card w-[22rem] shrink-0 overflow-hidden whitespace-nowrap font-mono text-[0.78rem] leading-6 shadow-2xl shadow-black/50"
     >
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
         <span className="size-2.5 rounded-full bg-white/15" />
@@ -138,10 +138,10 @@ export function Hero() {
 
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 font-mono text-[0.65rem] uppercase tracking-[0.25em] text-faint transition-colors hover:text-ink"
+        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 font-mono text-xs uppercase tracking-[0.25em] text-faint transition-colors hover:text-ink"
       >
         {hero.scroll}
-        <ChevronsDown className="size-4 animate-bounce" />
+        <ChevronsDown className="size-4" />
       </a>
     </section>
   )

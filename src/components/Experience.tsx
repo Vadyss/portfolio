@@ -19,10 +19,10 @@ export function Experience() {
                   style={{ background: 'color-mix(in oklab, var(--accent) 22%, transparent)' }}
                 />
                 <div className="relative flex items-start justify-between gap-4">
-                  <span className="grid size-12 place-items-center rounded-2xl border border-line bg-white/[0.04] text-accent">
+                  <span className="grid size-12 place-items-center rounded-2xl border border-line bg-white/[0.04] text-ink/80">
                     <Icon className="size-6" strokeWidth={1.6} />
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-[0.68rem] uppercase tracking-widest text-muted">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-xs uppercase tracking-widest text-muted">
                     <span className="size-1.5 rounded-full bg-accent" />
                     {item.status}
                   </span>

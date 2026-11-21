@@ -32,7 +32,7 @@ export const hero = {
     'I build AI-powered web apps.',
   ],
   lead: 'Based in Prague. I connect artificial intelligence, web development and cybersecurity — and I study IT at SSPŠ.',
-  ctaPrimary: 'Get in touch',
+  ctaPrimary: 'Contact me',
   ctaSecondary: 'See my work',
   scroll: 'Scroll to explore',
 }
@@ -55,7 +55,7 @@ export const about = {
 
 export const experience = {
   eyebrow: 'Experience',
-  title: 'Work & education',
+  title: 'Experience & education',
   intro: 'Within the ČEZ Group I work across two fields that overlap more every year — artificial intelligence and cybersecurity — alongside my IT studies.',
   items: [
     {
