@@ -1,6 +1,7 @@
 import { ArrowUpRight, ChevronsDown, MapPin } from 'lucide-react'
 import { hero, profile } from '../content'
 import { useScramble } from '../hooks'
+import { useMagnetic } from '../magnetic'
 
 function CodeCard() {
   // Decorative "identity" snippet — purely visual, hidden from assistive tech.
@@ -73,6 +74,8 @@ function CodeCard() {
 export function Hero() {
   const phrases = hero.phrases
   const [text] = useScramble(phrases)
+  const contactRef = useMagnetic<HTMLAnchorElement>()
+  const workRef = useMagnetic<HTMLAnchorElement>()
 
   return (
     <section id="home" className="relative flex min-h-svh items-center pb-24 pt-28">
@@ -117,11 +120,11 @@ export function Hero() {
           <p className="mt-10 max-w-xl sm:mt-12 text-base leading-relaxed text-muted sm:text-lg">{hero.lead}</p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="btn btn-primary">
+            <a ref={contactRef} href="#contact" className="btn btn-primary">
               {hero.ctaPrimary}
               <ArrowUpRight className="size-4" />
             </a>
-            <a href="#projects" className="btn btn-ghost">
+            <a ref={workRef} href="#projects" className="btn btn-ghost">
               {hero.ctaSecondary}
             </a>
             <span className="ml-1 inline-flex items-center gap-1.5 text-sm text-faint">
